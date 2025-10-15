@@ -21,7 +21,8 @@ class ProfileController extends Controller
     {
         return [
             'status'    => $randomCatFact ? 'success' : 'error',
-            'message'   => $randomCatFact ? 'Profile information gotten successfully' : 'Could not fetch cat fact from API.',
+            'message'   => $randomCatFact ? 'Profile information with random cat fact sent successfully!' :
+                'Could not fetch random cat fact. Profile information sent successfully.',
             'user'      => [
                 'email' => self::PROFILE_DATA['email'],
                 'name'  => self::PROFILE_DATA['name'],
