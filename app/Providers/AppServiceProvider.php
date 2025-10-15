@@ -12,6 +12,10 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+
+        if (app()->environment(['local', 'testing'])) {
+            $this->app->register(MockApiServiceProvider::class);
+        }
     }
 
     /**
