@@ -12,7 +12,7 @@ The goal of this task is to demonstrate the ability to:
 - Consume an external API (`https://catfact.ninja/fact`)
 - Return a properly formatted JSON response with dynamic data
 
-The API exposes a single endpoint:
+The API exposes a single endpoint:  
 ```
 
 GET /me
