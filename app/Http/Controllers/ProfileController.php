@@ -15,7 +15,8 @@ class ProfileController extends Controller
         'stack' => 'PHP/Laravel'
     ];
 
-    protected const RANDOM_CAT_FACT_API_URL = 'http://localhost:8000/cat-fact';
+    // protected const RANDOM_CAT_FACT_API_URL = 'http://localhost:8000/cat-fact';
+    protected const RANDOM_CAT_FACT_API_URL = 'https://catfact.ninja/fact';
 
     public static function getProfileData(?string $randomCatFact)
     {
@@ -41,7 +42,7 @@ class ProfileController extends Controller
         //
 
         try {
-            $response = Http::get(self::RANDOM_CAT_FACT_API_URL);
+            $response = Http::withoutVerifying()->get(self::RANDOM_CAT_FACT_API_URL);
             $randomCatFact = $response->json()['fact'] ?? null;
         } catch (ConnectionException $e) {
             $randomCatFact = null;
